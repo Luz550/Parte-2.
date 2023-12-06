@@ -1,0 +1,96 @@
+using System;
+using System.Collections.Generic;
+
+public enum TipoLocalizacion
+{
+    TerrenoBaldio,
+    Planicie,
+    Bosque,
+    SectorUrbano,
+    Vertedero,
+    Lago,
+    VertederoElectronico,
+    Cuartel,
+    SitioReciclaje
+}
+
+public class Localizacion
+{
+    public TipoLocalizacion Tipo { get; set; }
+    // Otras propiedades según sea necesario
+
+    public Localizacion(TipoLocalizacion tipo)
+    {
+        Tipo = tipo;
+    }
+}
+
+public class Operador
+{
+    public int PosicionX { get; set; }
+    public int PosicionY { get; set; }
+    public bool Danado { get; set; }
+    // Otras propiedades según sea necesario
+
+    public Operador(int x, int y)
+    {
+        PosicionX = x;
+        PosicionY = y;
+        Danado = false;
+    }
+
+    public void MoverA(int x, int y)
+    {
+        // Implementar lógica de movimiento
+    }
+
+    public void RealizarOperacionGeneral()
+    {
+        // Implementar operación general
+    }
+
+    // Otras rutinas y funciones según sea necesario
+}
+
+public class Simulador
+{
+    private Localizacion[,] terreno;
+    private List<Operador> operadores;
+
+    public Simulador()
+    {
+        terreno = InicializarTerreno();
+        operadores = InicializarOperadores();
+    }
+
+    private Localizacion[,] InicializarTerreno()
+    {
+        // Implementar lógica para generar el terreno aleatorio
+        return new Localizacion[100, 100];
+    }
+
+    private List<Operador> InicializarOperadores()
+    {
+        // Implementar lógica para inicializar operadores
+        return new List<Operador>();
+    }
+
+    public void EjecutarSimulacion()
+    {
+        // Acceder a los campos terreno y operadores
+        Console.WriteLine(terreno.Length);
+        Console.WriteLine(operadores.Count);
+        // Implementar lógica principal de simulación
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Simulador simulador = new Simulador();
+        simulador.EjecutarSimulacion();
+    }
+}
+
+//Matilda Sosa.
